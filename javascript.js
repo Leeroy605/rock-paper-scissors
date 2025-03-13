@@ -23,21 +23,31 @@ function getPlayerChoice () {
     return playerChoice;
 }
 
+function playGame () {
+
+}
+
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         return "Both chose the same. Round is a tie.";
     } else if ((playerChoice === "paper") && (computerChoice === "rock")) {
-        return "Paper beats rock, you win!";
+        playerScore++;
+        return "Paper beats rock, you win!"
     } else if ((playerChoice === "rock") && (computerChoice === "paper")) {
-        return "Paper beats rock, you lose.";
+        computerScore++;
+        return "Paper beats rock, you lose."
     } else if ((playerChoice === "paper") && (computerChoice === "scissors")) {
-        return "Scissors beats paper, you lose.";
+        computerScore++
+        return "Scissors beats paper, you lose."
     } else if ((playerChoice === "scissors") && (computerChoice === "paper")) {
-        return "Scissors beats paper, you win!";
+        playerScore++;
+        return "Scissors beats paper, you win!"
     } else if ((playerChoice === "rock") && (computerChoice === "scissors")) {
-        return "Rock beats scissors, you win!";
+        playerScore++;
+        return "Rock beats scissors, you win!"
     } else if ((playerChoice === "scissors") && (computerChoice === "rock")) {
-        return "Rock beats scissors, you lose.";
+        computerScore++;
+        return "Rock beats scissors, you lose."
     }
 }
     
@@ -45,3 +55,5 @@ console.log(randomNumber);
 console.log(computerChoice);
 console.log(playerChoice);
 console.log(roundResult);
+console.log(playerScore);
+console.log(computerScore);
