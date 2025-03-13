@@ -2,6 +2,7 @@ console.log("Hello World");
 
 let randomNumber = Math.floor(Math.random()*100)
 let computerChoice = getComputerChoice();
+let playerChoice = getPlayerChoice();
 
 
 
@@ -15,5 +16,11 @@ function getComputerChoice () {
     }
 }
 
+function getPlayerChoice () {
+    const playerChoice = prompt("Please choose from either rock, paper or scissors: ").toLowerCase();
+    return playerChoice;
+}
+
 console.log(randomNumber);
 console.log(computerChoice);
+console.log(playerChoice);
