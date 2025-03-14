@@ -19,10 +19,9 @@ function getPlayerChoice () {
     return playerChoice;
 }
 
-let computerChoice = getComputerChoice();
-let playerChoice = getPlayerChoice();
-
-
+//main function to play the game. Includes logic for determining choice wins, tracks scores, and checks
+//how many times the game has been played.
+//ends game after 5 rounds and tells you who won.
 function playGame() {
     let playerScore = 0;
     let computerScore = 0;
@@ -32,14 +31,8 @@ function playGame() {
         const computerChoice = getComputerChoice ();
         const playerChoice = getPlayerChoice ();
 
-        console.log(playRound(playerChoice, computerChoice));
         console.log("Current player score: " + playerScore);
         console.log("Current computer score: " + computerScore);
-
-
-
-
-
 
         function playRound(playerChoice, computerChoice) {
             if (playerChoice === computerChoice) {
@@ -64,6 +57,7 @@ function playGame() {
                 return "Rock beats scissors, you lose.";
             }
         }
+        console.log(playRound(playerChoice, computerChoice));
     }
 if (playerScore === computerScore) {
     winner = "Scores are tied. The game is a draw."
@@ -72,10 +66,7 @@ if (playerScore === computerScore) {
 } else if (playerScore < computerScore) {
     winner = "You lost the game. Try again."
 }
-
-let roundResult = playRound(playerChoice, computerChoice);
-console.log(roundResult);
-
+console.log(winner);
 }
-
-
+//starts the game.
+playGame();
