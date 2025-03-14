@@ -1,6 +1,5 @@
 
 let randomNumber = Math.floor(Math.random()*100)
-let display = playGame();
 
 
 
@@ -19,11 +18,12 @@ function getPlayerChoice () {
     return playerChoice;
 }
 
+console.log(playGame());
+
 function playGame() {
-    let roundsPlayed = 0;
-    for (roundsPlayed < 5; roundsPlayed++;);
-    let computerChoice = getComputerChoice();
-    let playerChoice = getPlayerChoice();
+    for (let roundsPlayed = 0; roundsPlayed < 5; roundsPlayed++);
+    const computerChoice = getComputerChoice();
+    const playerChoice = getPlayerChoice();
     let computerScore = 0;
     let playerScore = 0;
     function playRound(playerChoice, computerChoice) {
@@ -49,18 +49,11 @@ function playGame() {
             return "Rock beats scissors, you lose.";
         }
     }
-    let roundResult = playRound(playerChoice, computerChoice);
-
-
+let roundResult = playRound(playerChoice, computerChoice);
 console.log(computerChoice);
 console.log(playerChoice);
 console.log(roundResult);
-console.log(roundsPlayed);
-
-
-
-
-
-
-
+console.log(playerScore);
+console.log(computerScore);
 }
+
