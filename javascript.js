@@ -13,9 +13,26 @@ function getComputerChoice () {
 }
 
 function getPlayerChoice () {
-    let playerChoice = prompt("Please enter either rock, paper or scissors: ").toLowerCase();
+    
+}
+
+let playerChoice = '';
+
+function rockPlayerChoice () {
+    playerChoice = 'rock'
     return playerChoice;
 }
+
+function paperPlayerChoice () {
+    playerChoice = 'paper';
+    return playerChoice;
+}
+
+function scissorPlayerChoice () {
+    playerChoice = 'scissors';
+    return playerChoice;
+}
+
 
 let playerScore = 0;
 let computerScore = 0;
@@ -50,7 +67,7 @@ function playRound(playerChoice, computerChoice) {
 function playGame() {
 // the for loop to play 5 rounds would go here, deleted for now.
         const computerChoice = getComputerChoice ();
-        const playerChoice = getPlayerChoice ();
+        //const playerChoice = getPlayerChoice ();
         console.log(playRound(playerChoice, computerChoice));
         console.log("Current player score: " + playerScore);
         console.log("Current computer score: " + computerScore);
@@ -76,23 +93,25 @@ body.appendChild(text1)
 
 const rock = document.createElement('button');
 rock.textContent = 'Rock';
+rock.classList.add('rock');
 body.appendChild(rock);
 
 const paper = document.createElement('button');
 paper.textContent = 'Paper';
+paper.classList.add('paper');
 body.appendChild(paper);
 
 const scissors = document.createElement('button');
 scissors.textContent = 'Scissors';
+scissors.classList.add('scissors');
 body.appendChild(scissors);
 
 
 
 
-
-
-
-
+rock.addEventListener('click', rockPlayerChoice);
+paper.addEventListener('click', paperPlayerChoice);
+scissors.addEventListener('click', scissorPlayerChoice);
 
 
 
