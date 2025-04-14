@@ -56,6 +56,9 @@ body.appendChild(scorePlayer);
 const scoreComputer = document.createElement('div');
 body.appendChild(scoreComputer);
 
+const displayWinner = document.createElement('div');
+body.appendChild(displayWinner);
+
 
 
 function playRound(playerChoice, computerChoice) {
@@ -82,19 +85,19 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
+ 
 function playGame(playerPick) {
     computerChoice = getComputerChoice();
     roundResult.textContent = playRound(playerPick, computerChoice);
     scorePlayer.textContent = "Current player score: " + playerScore;
     scoreComputer.textContent = "Current computer score: " + computerScore;
-    if (playerScore === computerScore) {
-        winner = "Scores are tied. The game is a draw."
-}   else if (playerScore > computerScore) {
-        winner = "Congratulations, you won the game!"
-}   else if (playerScore < computerScore) {
-        winner = "You lost the game. Try again."
-}
-console.log(winner);
+    if (playerScore > 5 || computerScore > 5)  {
+        displayWinner.textContent = "";
+    } else if (playerScore === 5) {
+        displayWinner.textContent = 'Congratulations, you have won the game!'
+    } else if (computerScore === 5) {
+        displayWinner.textContent = 'You have lost. Try again.'
+    }
 }
 
 
