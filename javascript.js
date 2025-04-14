@@ -50,6 +50,12 @@ const roundResult = document.createElement('div');
 roundResult.id = 'roundResult';
 body.appendChild(roundResult);
 
+const scorePlayer = document.createElement('div');
+body.appendChild(scorePlayer);
+
+const scoreComputer = document.createElement('div');
+body.appendChild(scoreComputer);
+
 
 
 function playRound(playerChoice, computerChoice) {
@@ -79,9 +85,8 @@ function playRound(playerChoice, computerChoice) {
 function playGame(playerPick) {
     computerChoice = getComputerChoice();
     roundResult.textContent = playRound(playerPick, computerChoice);
-
-    console.log("Current player score: " + playerScore);
-    console.log("Current computer score: " + computerScore);
+    scorePlayer.textContent = "Current player score: " + playerScore;
+    scoreComputer.textContent = "Current computer score: " + computerScore;
     if (playerScore === computerScore) {
         winner = "Scores are tied. The game is a draw."
 }   else if (playerScore > computerScore) {
