@@ -1,22 +1,24 @@
 //this function uses a random number to generate the computer choice
 //to play the game.
 
+let computerChoice = '';
+let playerChoice = '';
+let playerScore = 0;
+let computerScore = 0;
+let winner = "";
+
 function getComputerChoice () {
     const randomNumber = Math.floor(Math.random()*100);
     if (randomNumber <= 33) {
-        return "rock";
+        computerChoice = "rock";
     } else if (randomNumber >= 34 && randomNumber <= 66) {
-        return "paper";
+        computerChoice = "paper";
     } else if (randomNumber > 67) {
-        return "scissors";
+        computerChoice = "scissors";
     }
+    return computerChoice;
 }
 
-function getPlayerChoice () {
-    
-}
-
-let playerChoice = '';
 
 function rockPlayerChoice () {
     playerChoice = 'rock'
@@ -33,17 +35,12 @@ function scissorPlayerChoice () {
     return playerChoice;
 }
 
-
-let playerScore = 0;
-let computerScore = 0;
-let winner = "";
-
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         return "Both chose the same. Round is a tie.";
     } else if ((playerChoice === "paper") && (computerChoice === "rock")) {
-     playerScore++
-     return "Paper beats rock, you win!";
+        playerScore++
+        return "Paper beats rock, you win!";
     } else if ((playerChoice === "rock") && (computerChoice === "paper")) {
         computerScore++
         return "Paper beats rock, you lose.";
@@ -51,8 +48,8 @@ function playRound(playerChoice, computerChoice) {
         computerScore++
         return "Scissors beats paper, you lose.";
     } else if ((playerChoice === "scissors") && (computerChoice === "paper")) {
-     playerScore++
-     return "Scissors beats paper, you win!";
+        playerScore++
+        return "Scissors beats paper, you win!";
     } else if ((playerChoice === "rock") && (computerChoice === "scissors")) {
         playerScore++
         return "Rock beats scissors, you win!";
@@ -65,18 +62,15 @@ function playRound(playerChoice, computerChoice) {
 //main function to play the game. Calls playRound function and displays current scores.
 //ends game after 5 rounds and tells you who won.
 function playGame() {
-// the for loop to play 5 rounds would go here, deleted for now.
-        const computerChoice = getComputerChoice ();
-        //const playerChoice = getPlayerChoice ();
-        console.log(playRound(playerChoice, computerChoice));
-        console.log("Current player score: " + playerScore);
-        console.log("Current computer score: " + computerScore);
-if (playerScore === computerScore) {
-    winner = "Scores are tied. The game is a draw."
-} else if (playerScore > computerScore) {
-    winner = "Congratulations, you won the game!"
-} else if (playerScore < computerScore) {
-    winner = "You lost the game. Try again."
+    console.log(playRound(playerChoice, computerChoice));
+    console.log("Current player score: " + playerScore);
+    console.log("Current computer score: " + computerScore);
+    if (playerScore === computerScore) {
+        winner = "Scores are tied. The game is a draw."
+}   else if (playerScore > computerScore) {
+        winner = "Congratulations, you won the game!"
+}   else if (playerScore < computerScore) {
+        winner = "You lost the game. Try again."
 }
 console.log(winner);
 }
@@ -105,6 +99,8 @@ const scissors = document.createElement('button');
 scissors.textContent = 'Scissors';
 scissors.classList.add('scissors');
 body.appendChild(scissors);
+
+
 
 
 
