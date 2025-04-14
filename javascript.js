@@ -75,7 +75,35 @@ function playGame() {
 console.log(winner);
 }
 
-const body = document.querySelector('body');
+const body = document.querySelector('body')
+
+const title = document.createElement('h1');
+title.textContent = "Let's play rock, paper, scissors!";
+body.appendChild(title);
+
+const instructions = document.createElement('div');
+instructions.textContent = 'Select one of the buttons below to choose your hand:';
+body.appendChild(instructions);
+
+const rock = document.createElement('button');
+rock.classList.add('btn')
+rock.id = 'rock-button';
+rock.textContent = 'Rock';
+body.appendChild(rock);
+
+const paper = document.createElement('button');
+paper.classList.add('btn');
+paper.id ='paper-button';
+paper.textContent = 'Paper';
+body.appendChild(paper);
+
+const scissors = document.createElement('button');
+scissors.classList.add('btn');
+scissors.id = 'scissors-button';
+scissors.textContent = 'Scissors';
+body.appendChild(scissors);
+
+
 
 
 
