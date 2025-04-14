@@ -19,42 +19,42 @@ function getPlayerChoice () {
     return playerChoice;
 }
 
+let playerScore = 0;
+let computerScore = 0;
+let winner = "";
+
+function playRound(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) {
+        return "Both chose the same. Round is a tie.";
+    } else if ((playerChoice === "paper") && (computerChoice === "rock")) {
+     playerScore++
+     return "Paper beats rock, you win!";
+    } else if ((playerChoice === "rock") && (computerChoice === "paper")) {
+        computerScore++
+        return "Paper beats rock, you lose.";
+    } else if ((playerChoice === "paper") && (computerChoice === "scissors")) {
+        computerScore++
+        return "Scissors beats paper, you lose.";
+    } else if ((playerChoice === "scissors") && (computerChoice === "paper")) {
+     playerScore++
+     return "Scissors beats paper, you win!";
+    } else if ((playerChoice === "rock") && (computerChoice === "scissors")) {
+        playerScore++
+        return "Rock beats scissors, you win!";
+    } else if ((playerChoice === "scissors") && (computerChoice === "rock")) {
+        computerScore++
+        return "Rock beats scissors, you lose.";
+    }
+}
+
 //main function to play the game. Includes logic for determining choice wins, tracks scores, and checks
 //how many times the game has been played.
 //ends game after 5 rounds and tells you who won.
 function playGame() {
-    let playerScore = 0;
-    let computerScore = 0;
-    let winner = "";
 
     for (let roundsPlayed = 0; roundsPlayed < 5; roundsPlayed++) {
         const computerChoice = getComputerChoice ();
         const playerChoice = getPlayerChoice ();
-
-
-        function playRound(playerChoice, computerChoice) {
-            if (playerChoice === computerChoice) {
-                return "Both chose the same. Round is a tie.";
-            } else if ((playerChoice === "paper") && (computerChoice === "rock")) {
-             playerScore++
-             return "Paper beats rock, you win!";
-            } else if ((playerChoice === "rock") && (computerChoice === "paper")) {
-                computerScore++
-                return "Paper beats rock, you lose.";
-            } else if ((playerChoice === "paper") && (computerChoice === "scissors")) {
-                computerScore++
-                return "Scissors beats paper, you lose.";
-            } else if ((playerChoice === "scissors") && (computerChoice === "paper")) {
-             playerScore++
-             return "Scissors beats paper, you win!";
-            } else if ((playerChoice === "rock") && (computerChoice === "scissors")) {
-                playerScore++
-                return "Rock beats scissors, you win!";
-            } else if ((playerChoice === "scissors") && (computerChoice === "rock")) {
-                computerScore++
-                return "Rock beats scissors, you lose.";
-            }
-        }
         console.log(playRound(playerChoice, computerChoice));
         console.log("Current player score: " + playerScore);
         console.log("Current computer score: " + computerScore);
