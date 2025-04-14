@@ -31,8 +31,6 @@ function playGame() {
         const computerChoice = getComputerChoice ();
         const playerChoice = getPlayerChoice ();
 
-        console.log("Current player score: " + playerScore);
-        console.log("Current computer score: " + computerScore);
 
         function playRound(playerChoice, computerChoice) {
             if (playerChoice === computerChoice) {
@@ -58,6 +56,8 @@ function playGame() {
             }
         }
         console.log(playRound(playerChoice, computerChoice));
+        console.log("Current player score: " + playerScore);
+        console.log("Current computer score: " + computerScore);
     }
 if (playerScore === computerScore) {
     winner = "Scores are tied. The game is a draw."
