@@ -77,38 +77,6 @@ console.log(winner);
 
 const body = document.querySelector('body');
 
-const title = document.createElement('h1');
-title.textContent = 'Lets play rock, paper, scissors!';
-body.appendChild(title);
-
-const text1 = document.createElement('div');
-text1.textContent = 'Please use the buttons below to start the game and pick a hand.'
-body.appendChild(text1)
-
-const rock = document.createElement('button');
-rock.textContent = 'Rock';
-rock.classList.add('rock');
-body.appendChild(rock);
-
-const paper = document.createElement('button');
-paper.textContent = 'Paper';
-paper.classList.add('paper');
-body.appendChild(paper);
-
-const scissors = document.createElement('button');
-scissors.textContent = 'Scissors';
-scissors.classList.add('scissors');
-body.appendChild(scissors);
-
-
-
-
-
-
-rock.addEventListener('click', rockPlayerChoice);
-paper.addEventListener('click', paperPlayerChoice);
-scissors.addEventListener('click', scissorPlayerChoice);
-
 
 
 
