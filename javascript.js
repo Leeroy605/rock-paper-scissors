@@ -12,8 +12,6 @@ function getComputerChoice () {
     }
 }
 
-//this function asks the player for thier choice via browser prompt and
-//stores as playerChoice variable
 function getPlayerChoice () {
     let playerChoice = prompt("Please enter either rock, paper or scissors: ").toLowerCase();
     return playerChoice;
@@ -47,18 +45,15 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-//main function to play the game. Includes logic for determining choice wins, tracks scores, and checks
-//how many times the game has been played.
+//main function to play the game. Calls playRound function and displays current scores.
 //ends game after 5 rounds and tells you who won.
 function playGame() {
-
-    for (let roundsPlayed = 0; roundsPlayed < 5; roundsPlayed++) {
+// the for loop to play 5 rounds would go here, deleted for now.
         const computerChoice = getComputerChoice ();
         const playerChoice = getPlayerChoice ();
         console.log(playRound(playerChoice, computerChoice));
         console.log("Current player score: " + playerScore);
         console.log("Current computer score: " + computerScore);
-    }
 if (playerScore === computerScore) {
     winner = "Scores are tied. The game is a draw."
 } else if (playerScore > computerScore) {
@@ -68,5 +63,45 @@ if (playerScore === computerScore) {
 }
 console.log(winner);
 }
+
+const body = document.querySelector('body');
+
+const title = document.createElement('h1');
+title.textContent = 'Lets play rock, paper, scissors!';
+body.appendChild(title);
+
+const text1 = document.createElement('div');
+text1.textContent = 'Please use the buttons below to start the game and pick a hand.'
+body.appendChild(text1)
+
+const rock = document.createElement('button');
+rock.textContent = 'Rock';
+body.appendChild(rock);
+
+const paper = document.createElement('button');
+paper.textContent = 'Paper';
+body.appendChild(paper);
+
+const scissors = document.createElement('button');
+scissors.textContent = 'Scissors';
+body.appendChild(scissors);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //starts the game.
-playGame();
+//playGame();
+
+
